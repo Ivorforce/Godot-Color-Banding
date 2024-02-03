@@ -1,0 +1,35 @@
+[gd_scene load_steps=8 format=3 uid="uid://be8pkw1al6m8r"]
+
+[ext_resource type="Shader" path="res://planet.gdshader" id="1_1p6fo"]
+[ext_resource type="Texture2D" uid="uid://cc4u7063b22e6" path="res://icon.svg" id="1_t8nq3"]
+[ext_resource type="Shader" path="res://sky.gdshader" id="3_uscxb"]
+[ext_resource type="Environment" uid="uid://ctprkvqrvelvt" path="res://environment.tres" id="4_dvf7v"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l4urs"]
+shader = ExtResource("3_uscxb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0o63y"]
+shader = ExtResource("1_1p6fo")
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_hky3g"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BG" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_l4urs")
+position = Vector2(2404.5, 1012)
+scale = Vector2(54.1172, 30.0938)
+texture = ExtResource("1_t8nq3")
+
+[node name="Planet" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0o63y")
+position = Vector2(556, 322)
+scale = Vector2(4.16016, 4.16016)
+texture = ExtResource("1_t8nq3")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(574, 325)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("4_dvf7v")
+camera_attributes = SubResource("CameraAttributesPractical_hky3g")
