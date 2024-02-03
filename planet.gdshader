@@ -11,8 +11,6 @@ void fragment() {
 		discard;
 	}
 
-	d = pow(d, 16);
-	
 	// Baller antialiasing
-	COLOR = vec4(vec3(1.0), min(20.0 - d * 20.0, d));
+	COLOR = vec4(vec3(1.0), min(40.0 - d * 40.0, d));
 }
