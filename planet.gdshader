@@ -6,5 +6,5 @@ float length_sq(vec2 v) {
 
 void fragment() {
 	float d = length_sq(UV - 0.5) * 4.0;
-	COLOR = vec4(vec3(1.0), d);
+	COLOR = vec4(vec3(1.0), pow(d, 32));
 }
